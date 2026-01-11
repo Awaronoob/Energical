@@ -11,7 +11,8 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, Energical.MOD_ID);
 
-    public static final RegistryObject<Item> FLUXXITE_BRICK = ITEMS.register("fluxxite_brick",
+
+    public static final RegistryObject<Item> UNPRESSED_FLUXXITE = ITEMS.register("fluxxite_brick",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> RAW_NEODYMITE = ITEMS.register("raw_neodymite",
@@ -19,6 +20,7 @@ public class ModItems {
 
     public static final RegistryObject<Item> NEODYMITE_BAR = ITEMS.register("neodymite_bar",
             () -> new Item(new Item.Properties()));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

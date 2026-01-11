@@ -13,7 +13,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        basicItem(ModItems.FLUXXITE_BRICK.get());
+        basicItem(ModItems.UNPRESSED_FLUXXITE.get());
 
         basicItem(ModItems.RAW_NEODYMITE.get());
         basicItem(ModItems.NEODYMITE_BAR.get());
