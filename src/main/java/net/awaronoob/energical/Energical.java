@@ -51,8 +51,21 @@ public class Energical
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.FLUXXITE);
+            event.accept(ModItems.FLUXXITE_BRICK);
+
+            event.accept(ModItems.RAW_NEODYMITE);
+            event.accept(ModItems.NEODYMITE_BAR);
         }
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.FLUXXITE_BLOCK);
+            event.accept(ModBlocks.NEODYMITE_BLOCK);
+        }
+        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(ModBlocks.NEODYMITE_ORE);
+            event.accept(ModBlocks.DEEPSLATE_NEODYMITE_ORE);
+            event.accept(ModBlocks.RAW_NEODYMITE_BLOCK);
+        }
+
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
