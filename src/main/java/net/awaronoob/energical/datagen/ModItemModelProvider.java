@@ -16,7 +16,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.UNPRESSED_FLUXXITE.get());
 
         basicItem(ModItems.RAW_NEODYMITE.get());
-        basicItem(ModItems.NEODYMITE_BAR.get());
+        basicItem(ModItems.NEODYMITE_INGOT.get());
 
 
     }

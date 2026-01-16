@@ -12,13 +12,13 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, Energical.MOD_ID);
 
 
-    public static final RegistryObject<Item> UNPRESSED_FLUXXITE = ITEMS.register("fluxxite_brick",
+    public static final RegistryObject<Item> UNPRESSED_FLUXXITE = ITEMS.register("unpressed_fluxxite",
             () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> RAW_NEODYMITE = ITEMS.register("raw_neodymite",
             () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> NEODYMITE_BAR = ITEMS.register("neodymite_bar",
+    public static final RegistryObject<Item> NEODYMITE_INGOT = ITEMS.register("neodymite_ingot",
             () -> new Item(new Item.Properties()));
 
 

@@ -54,7 +54,7 @@ public class Energical
             event.accept(ModItems.UNPRESSED_FLUXXITE);
 
             event.accept(ModItems.RAW_NEODYMITE);
-            event.accept(ModItems.NEODYMITE_BAR);
+            event.accept(ModItems.NEODYMITE_INGOT);
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.FLUXXITE_BLOCK);
