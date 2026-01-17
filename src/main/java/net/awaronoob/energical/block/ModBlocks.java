@@ -24,29 +24,29 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> FLUXXITE_BLOCK = registerBlock("fluxxite_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.NETHER_BRICKS)
+                    .strength(6f).requiresCorrectToolForDrops().sound(SoundType.NETHER_BRICKS)
                     .mapColor(MapColor.COLOR_BLACK)));
 
     public static final RegistryObject<Block> NEODYMITE_ORE = registerBlock("neodymite_ore",
             () -> new DropExperienceBlock(UniformInt.of(1, 5),
                     BlockBehaviour.Properties.of()
-                    .strength(3.5F, 4.5F).requiresCorrectToolForDrops().sound(SoundType.METAL)
+                    .strength(4.5F, 4.5F).requiresCorrectToolForDrops().sound(SoundType.METAL)
                     .mapColor(MapColor.STONE)));
 
     public static final RegistryObject<Block> DEEPSLATE_NEODYMITE_ORE = registerBlock("deepslate_neodymite_ore",
             () -> new DropExperienceBlock(UniformInt.of(1, 5),
                     BlockBehaviour.Properties.of()
-                            .strength(4.5F, 4.5F).requiresCorrectToolForDrops().sound(SoundType.METAL)
+                            .strength(5.5F, 4.5F).requiresCorrectToolForDrops().sound(SoundType.METAL)
                             .mapColor(MapColor.STONE)));
 
     public static final RegistryObject<Block> RAW_NEODYMITE_BLOCK = registerBlock("raw_neodymite_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4.5F, 5.5F).requiresCorrectToolForDrops().sound(SoundType.METAL)
+                    .strength(5.5F, 5.5F).requiresCorrectToolForDrops().sound(SoundType.METAL)
                     .mapColor(MapColor.METAL)));
 
     public static final RegistryObject<Block> NEODYMITE_BLOCK = registerBlock("neodymite_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(6.0F, 7.0F).requiresCorrectToolForDrops().sound(SoundType.METAL)
+                    .strength(7.0F, 7.0F).requiresCorrectToolForDrops().sound(SoundType.METAL)
                     .mapColor(MapColor.METAL)));
 
 
