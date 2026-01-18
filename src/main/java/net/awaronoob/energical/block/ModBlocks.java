@@ -61,6 +61,7 @@ public class ModBlocks {
     }
 
     public static void register(IEventBus eventBus) {
+        Energical.LOGGER.info("Registering blocks for " + Energical.MOD_ID);
         BLOCKS.register(eventBus );
     }
 }

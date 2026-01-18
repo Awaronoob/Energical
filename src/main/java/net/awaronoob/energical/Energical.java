@@ -2,6 +2,7 @@ package net.awaronoob.energical;
 
 import com.mojang.logging.LogUtils;
 import net.awaronoob.energical.block.ModBlocks;
+import net.awaronoob.energical.item.ModCreativeModeTabs;
 import net.awaronoob.energical.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -17,6 +18,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import org.spongepowered.asm.logging.ILogger;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Energical.MOD_ID)
@@ -34,6 +36,8 @@ public class Energical
         modEventBus.addListener(this::commonSetup);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+
+        ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
@@ -55,6 +59,12 @@ public class Energical
 
             event.accept(ModItems.RAW_NEODYMITE);
             event.accept(ModItems.NEODYMITE_INGOT);
+
+            event.accept(ModItems.COPPER_SHEET);
+            event.accept(ModItems.IRON_SHEET);
+            event.accept(ModItems.NEODYMITE_SHEET);
+            event.accept(ModItems.NETHERITE_SHEET);
+
         }
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.FLUXXITE_BLOCK);

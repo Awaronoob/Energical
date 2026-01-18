@@ -21,8 +21,25 @@ public class ModItems {
     public static final RegistryObject<Item> NEODYMITE_INGOT = ITEMS.register("neodymite_ingot",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> NEODYMITE_SHEET = ITEMS.register("neodymite_sheet",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> IRON_SHEET = ITEMS.register("iron_sheet",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> COPPER_SHEET = ITEMS.register("copper_sheet",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> GOLD_SHEET = ITEMS.register("gold_sheet",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> NETHERITE_SHEET = ITEMS.register("netherite_sheet",
+            () -> new Item(new Item.Properties()));
+
 
     public static void register(IEventBus eventBus) {
+        Energical.LOGGER.info("Registering items for " + Energical.MOD_ID);
+
         ITEMS.register(eventBus);
     }
 }
