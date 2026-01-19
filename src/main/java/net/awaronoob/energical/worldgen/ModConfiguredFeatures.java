@@ -28,7 +28,7 @@ public class ModConfiguredFeatures {
                 OreConfiguration.target(stoneReplaceables, ModBlocks.NEODYMITE_ORE.get().defaultBlockState()),
                 OreConfiguration.target(deepslateReplaceables, ModBlocks.DEEPSLATE_NEODYMITE_ORE.get().defaultBlockState()));
 
-        register(context, OVERWORLD_NEODYMITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldNeodymiteOres, 6));
+        register(context, OVERWORLD_NEODYMITE_ORE_KEY, Feature.ORE, new OreConfiguration(overworldNeodymiteOres, 16));
 
 
     }
