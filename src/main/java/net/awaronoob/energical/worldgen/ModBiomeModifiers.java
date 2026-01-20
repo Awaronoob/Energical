@@ -21,7 +21,7 @@ public class ModBiomeModifiers {
 
         context.register(ADD_NEODYMITE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
-                HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.NEODYMITE_ORE_PLACED_KEY)),
+                HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.NEODYMITE_ORE_MEDIUM_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
 

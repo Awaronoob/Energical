@@ -15,14 +15,14 @@ import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import java.util.List;
 
 public class ModPlacedFeatures {
-    public static final ResourceKey<PlacedFeature> NEODYMITE_ORE_PLACED_KEY = registerKey("neodymite_ore_placed");
+    public static final ResourceKey<PlacedFeature> NEODYMITE_ORE_MEDIUM_PLACED_KEY = registerKey("neodymite_ore_placed");
 
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        register(context, NEODYMITE_ORE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_NEODYMITE_ORE_KEY),
+        register(context, NEODYMITE_ORE_MEDIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_NEODYMITE_ORE_MEDIUM_KEY),
                 ModOrePlacement.commonOrePlacement(20,
                         HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(65))));
 
