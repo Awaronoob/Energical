@@ -15,16 +15,36 @@ import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import java.util.List;
 
 public class ModPlacedFeatures {
-    public static final ResourceKey<PlacedFeature> NEODYMITE_ORE_MEDIUM_PLACED_KEY = registerKey("neodymite_ore_placed");
+    public static final ResourceKey<PlacedFeature> NEODYMITE_ORE_SMALL_PLACED_KEY = registerKey("neodymite_ore_small_placed");
+    public static final ResourceKey<PlacedFeature> NEODYMITE_ORE_MEDIUM_PLACED_KEY = registerKey("neodymite_ore_medium_placed");
+    public static final ResourceKey<PlacedFeature> NEODYMITE_ORE_LARGE_PLACED_KEY = registerKey("neodymite_ore_large_placed");
+    public static final ResourceKey<PlacedFeature> NEODYMITE_ORE_BURIED_PLACED_KEY = registerKey("neodymite_ore_buried_placed");
+    public static final ResourceKey<PlacedFeature> NEODYMITE_ORE_JUNGLE_PLACED_KEY = registerKey("neodymite_ore_jungle_placed");
 
 
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
+        register(context, NEODYMITE_ORE_SMALL_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_NEODYMITE_ORE_SMALL_KEY),
+                ModOrePlacement.commonOrePlacement(9,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(100))));
+
         register(context, NEODYMITE_ORE_MEDIUM_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_NEODYMITE_ORE_MEDIUM_KEY),
-                ModOrePlacement.commonOrePlacement(20,
-                        HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(65))));
+                ModOrePlacement.commonOrePlacement(6,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
+
+        register(context, NEODYMITE_ORE_LARGE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_NEODYMITE_ORE_LARGE_KEY),
+                ModOrePlacement.commonOrePlacement(3,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(65))));
+
+        register(context, NEODYMITE_ORE_BURIED_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_NEODYMITE_ORE_BURIED_KEY),
+                ModOrePlacement.commonOrePlacement(4,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(65))));
+
+        register(context, NEODYMITE_ORE_JUNGLE_PLACED_KEY, configuredFeatures.getOrThrow(ModConfiguredFeatures.OVERWORLD_NEODYMITE_ORE_JUNGLE_KEY),
+                ModOrePlacement.commonOrePlacement(7,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(80))));
 
     }
 

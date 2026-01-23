@@ -7,21 +7,56 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ForgeBiomeModifiers;
 import net.minecraftforge.registries.ForgeRegistries;
 
+import javax.swing.text.html.HTML;
+
 public class ModBiomeModifiers {
-    public static final ResourceKey<BiomeModifier> ADD_NEODYMITE_ORE = registerKey("add_neodymite_ore");
+    public static final ResourceKey<BiomeModifier> ADD_NEODYMITE_ORE_SMALL = registerKey("add_neodymite_ore_small");
+    public static final ResourceKey<BiomeModifier> ADD_NEODYMITE_ORE_MEDIUM = registerKey("add_neodymite_ore_medium");
+    public static final ResourceKey<BiomeModifier> ADD_NEODYMITE_ORE_LARGE = registerKey("add_neodymite_ore_large");
+    public static final ResourceKey<BiomeModifier> ADD_NEODYMITE_ORE_BURIED = registerKey("add_neodymite_ore_buried");
+    public static final ResourceKey<BiomeModifier> ADD_NEODYMITE_ORE_JUNGLE = registerKey("add_neodymite_ore_jungle");
+
+
+
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         var placedFeature = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
 
-        context.register(ADD_NEODYMITE_ORE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+        context.register(ADD_NEODYMITE_ORE_SMALL, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.NEODYMITE_ORE_SMALL_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(ADD_NEODYMITE_ORE_MEDIUM, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
                 HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.NEODYMITE_ORE_MEDIUM_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(ADD_NEODYMITE_ORE_LARGE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.NEODYMITE_ORE_LARGE_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(ADD_NEODYMITE_ORE_BURIED, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
+                HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.NEODYMITE_ORE_BURIED_PLACED_KEY)),
+                GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+        context.register(ADD_NEODYMITE_ORE_JUNGLE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_JUNGLE),
+                HolderSet.direct(placedFeature.getOrThrow(ModPlacedFeatures.NEODYMITE_ORE_JUNGLE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
 

@@ -17,10 +17,11 @@ import net.minecraft.world.level.levelgen.structure.templatesystem.TagMatchTest;
 import java.util.List;
 
 public class ModConfiguredFeatures {
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_NEODYMITE_ORE_SMALL_KEY = registerKey("neodymite_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_NEODYMITE_ORE_MEDIUM_KEY = registerKey("neodymite_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_NEODYMITE_ORE_LARGE_KEY = registerKey("neodymite_ore");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_NEODYMITE_ORE_BURIED_KEY = registerKey("neodymite_ore");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_NEODYMITE_ORE_SMALL_KEY = registerKey("neodymite_ore_small");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_NEODYMITE_ORE_MEDIUM_KEY = registerKey("neodymite_ore_medium");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_NEODYMITE_ORE_LARGE_KEY = registerKey("neodymite_ore_large");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_NEODYMITE_ORE_BURIED_KEY = registerKey("neodymite_ore_buried");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_NEODYMITE_ORE_JUNGLE_KEY = registerKey("neodymite_ore_jungle");
 
 
 
@@ -36,6 +37,8 @@ public class ModConfiguredFeatures {
         register(context, OVERWORLD_NEODYMITE_ORE_MEDIUM_KEY, Feature.ORE, new OreConfiguration(overworldNeodymiteOres, 6));
         register(context, OVERWORLD_NEODYMITE_ORE_LARGE_KEY, Feature.ORE, new OreConfiguration(overworldNeodymiteOres, 9));
         register(context, OVERWORLD_NEODYMITE_ORE_BURIED_KEY, Feature.ORE, new OreConfiguration(overworldNeodymiteOres, 4, 1.0f));
+        register(context, OVERWORLD_NEODYMITE_ORE_JUNGLE_KEY, Feature.ORE, new OreConfiguration(overworldNeodymiteOres, 6));
+
 
     }
 
