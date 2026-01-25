@@ -3,10 +3,12 @@ package net.awaronoob.energical;
 import com.mojang.logging.LogUtils;
 import net.awaronoob.energical.block.ModBlocks;
 import net.awaronoob.energical.block.entity.ModBlockEntities;
+import net.awaronoob.energical.block.entity.renderer.ItemDisplayBlockEntityRenderer;
 import net.awaronoob.energical.item.ModCreativeModeTabs;
 import net.awaronoob.energical.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -20,6 +22,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import org.spongepowered.asm.logging.ILogger;
+
+import javax.swing.text.html.parser.Entity;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Energical.MOD_ID)
@@ -47,7 +51,7 @@ public class Energical
         ModBlocks.register(modEventBus);
 
         Energical.LOGGER.info("Registering block entities for " + Energical.MOD_ID);
-        ModBlockEntities.register();
+        ModBlockEntities.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -99,6 +103,11 @@ public class Energical
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+        }
+
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.ITEM_DISPLAY_BE.get(), ItemDisplayBlockEntityRenderer::new);
         }
     }
 }

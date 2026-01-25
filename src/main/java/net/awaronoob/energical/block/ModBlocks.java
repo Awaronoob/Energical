@@ -51,7 +51,7 @@ public class ModBlocks {
                     .mapColor(MapColor.METAL)));
 
     public static final RegistryObject<Block> ITEM_DISPLAY = registerBlock("item_display",
-            () -> new ItemDisplayBlock(BlockBehaviour.Properties.of().noOcclusion()));
+            () -> new ItemDisplayBlock(BlockBehaviour.Properties.of().strength(4.0F, 3.0F).noOcclusion()));
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block ) {

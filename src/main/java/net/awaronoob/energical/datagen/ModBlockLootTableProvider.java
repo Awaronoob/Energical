@@ -31,6 +31,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider{
         dropSelf(ModBlocks.RAW_NEODYMITE_BLOCK.get());
         dropSelf(ModBlocks.NEODYMITE_BLOCK.get());
 
+        dropSelf(ModBlocks.ITEM_DISPLAY.get());
+
         this.add(ModBlocks.NEODYMITE_ORE.get(),
                 block -> createOreDrop(ModBlocks.NEODYMITE_ORE.get(), ModItems.RAW_NEODYMITE.get()));
         this.add(ModBlocks.DEEPSLATE_NEODYMITE_ORE.get(),

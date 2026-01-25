@@ -11,13 +11,12 @@ import net.minecraft.world.Containers;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class ItemDisplayEntity extends BlockEntity {
+public class ItemDisplayBlockEntity extends BlockEntity {
     public final ItemStackHandler inventory = new ItemStackHandler(1) {
         @Override
         protected int getStackLimit(int slot, @NotNull ItemStack stack) {
@@ -33,8 +32,19 @@ public class ItemDisplayEntity extends BlockEntity {
         }
     };
 
-    public ItemDisplayEntity(BlockPos pPos, BlockState pBlockState) {
+    private float rotation;
+    private float rotation_amount = 0.5f;
+
+    public ItemDisplayBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlockEntities.ITEM_DISPLAY_BE.get(), pPos, pBlockState);
+    }
+
+    public float getRenderingRotation() {
+        this.rotation += rotation_amount;
+        if(this.rotation >= 360.0f) {
+            this.rotation = 0.0f;
+        }
+        return this.rotation;
     }
 
     public void clearContents() {

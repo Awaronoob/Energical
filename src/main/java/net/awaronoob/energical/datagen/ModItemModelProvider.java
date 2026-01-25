@@ -18,6 +18,5 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RAW_NEODYMITE.get());
         basicItem(ModItems.NEODYMITE_INGOT.get());
 
-
     }
 }
