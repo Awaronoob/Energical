@@ -43,13 +43,14 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.FLUXXITE_BLOCK.get());
 
+                        output.accept(ModBlocks.ITEM_DISPLAY.get());
+
 
                     }).build());
 
 
 
     public static void register(IEventBus eventBus) {
-        Energical.LOGGER.info("Registering creative mode tabs for " + Energical.MOD_ID);
         CREATIVE_MODE_TABS.register(eventBus);
 
     }

@@ -38,8 +38,6 @@ public class ModItems {
 
 
     public static void register(IEventBus eventBus) {
-        Energical.LOGGER.info("Registering items for " + Energical.MOD_ID);
-
         ITEMS.register(eventBus);
     }
 }

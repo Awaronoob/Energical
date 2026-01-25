@@ -1,6 +1,7 @@
 package net.awaronoob.energical.block;
 
 import net.awaronoob.energical.Energical;
+import net.awaronoob.energical.block.custom.ItemDisplayBlock;
 import net.awaronoob.energical.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -49,6 +50,9 @@ public class ModBlocks {
                     .strength(7.0F, 7.0F).requiresCorrectToolForDrops().sound(SoundType.METAL)
                     .mapColor(MapColor.METAL)));
 
+    public static final RegistryObject<Block> ITEM_DISPLAY = registerBlock("item_display",
+            () -> new ItemDisplayBlock(BlockBehaviour.Properties.of().noOcclusion()));
+
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block ) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -61,7 +65,6 @@ public class ModBlocks {
     }
 
     public static void register(IEventBus eventBus) {
-        Energical.LOGGER.info("Registering blocks for " + Energical.MOD_ID);
         BLOCKS.register(eventBus );
     }
 }

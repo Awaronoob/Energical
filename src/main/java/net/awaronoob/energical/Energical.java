@@ -2,6 +2,7 @@ package net.awaronoob.energical;
 
 import com.mojang.logging.LogUtils;
 import net.awaronoob.energical.block.ModBlocks;
+import net.awaronoob.energical.block.entity.ModBlockEntities;
 import net.awaronoob.energical.item.ModCreativeModeTabs;
 import net.awaronoob.energical.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -37,10 +38,16 @@ public class Energical
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
 
+        Energical.LOGGER.info("Registering creative mode tabs for " + Energical.MOD_ID);
         ModCreativeModeTabs.register(modEventBus);
 
+        Energical.LOGGER.info("Registering items for " + Energical.MOD_ID);
         ModItems.register(modEventBus);
+        Energical.LOGGER.info("Registering blocks for " + Energical.MOD_ID);
         ModBlocks.register(modEventBus);
+
+        Energical.LOGGER.info("Registering block entities for " + Energical.MOD_ID);
+        ModBlockEntities.register();
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -74,6 +81,9 @@ public class Energical
             event.accept(ModBlocks.NEODYMITE_ORE);
             event.accept(ModBlocks.DEEPSLATE_NEODYMITE_ORE);
             event.accept(ModBlocks.RAW_NEODYMITE_BLOCK);
+        }
+        if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
+            event.accept(ModBlocks.ITEM_DISPLAY);
         }
 
     }
